@@ -9,7 +9,7 @@
 import UIKit
 
 class FICImageTableChunk {
-    var bytes: UnsafeMutableRawPointer?
+    var bytes: UnsafeMutableRawPointer
     var fileOffset: off_t
     var index: Int
     var length: size_t
@@ -22,8 +22,6 @@ class FICImageTableChunk {
     }
     
     deinit {
-        if let bytes = self.bytes {
-            munmap(bytes, self.length)
-        }
+        munmap(bytes, self.length)
     }
 }

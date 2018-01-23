@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18DC26022012F02200156DCF /* FICUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 18DC26002012F02200156DCF /* FICUtilities.h */; };
+		18DC26032012F02200156DCF /* FICUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC26012012F02200156DCF /* FICUtilities.m */; };
+		18DC26052012F08200156DCF /* FICImageTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC26042012F08200156DCF /* FICImageTable.swift */; };
+		18DC26072012F31500156DCF /* FICImageFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC26062012F31500156DCF /* FICImageFormat.swift */; };
+		18DC260920132A2700156DCF /* FICEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC260820132A2700156DCF /* FICEntity.swift */; };
+		18DC260B2013341200156DCF /* FICIImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC260A2013341200156DCF /* FICIImageCache.swift */; };
 		18DCBAD9201202B900649399 /* FastImageCache_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DCBACF201202B900649399 /* FastImageCache_Swift.framework */; };
 		18DCBADE201202B900649399 /* FastImageCache_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCBADD201202B900649399 /* FastImageCache_SwiftTests.swift */; };
 		18DCBAE0201202B900649399 /* FastImageCache_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 18DCBAD2201202B900649399 /* FastImageCache_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18DC26002012F02200156DCF /* FICUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FICUtilities.h; sourceTree = "<group>"; };
+		18DC26012012F02200156DCF /* FICUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FICUtilities.m; sourceTree = "<group>"; };
+		18DC26042012F08200156DCF /* FICImageTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FICImageTable.swift; sourceTree = "<group>"; };
+		18DC26062012F31500156DCF /* FICImageFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FICImageFormat.swift; sourceTree = "<group>"; };
+		18DC260820132A2700156DCF /* FICEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FICEntity.swift; sourceTree = "<group>"; };
+		18DC260A2013341200156DCF /* FICIImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FICIImageCache.swift; sourceTree = "<group>"; };
 		18DCBACF201202B900649399 /* FastImageCache_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastImageCache_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18DCBAD2201202B900649399 /* FastImageCache_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FastImageCache_Swift.h; sourceTree = "<group>"; };
 		18DCBAD3201202B900649399 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +66,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18DC25FF2012EFF600156DCF /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		18DCBAC5201202B900649399 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +97,13 @@
 				18DCBAD2201202B900649399 /* FastImageCache_Swift.h */,
 				18DCBAE9201202F700649399 /* FICImageTableEntry.swift */,
 				18DCBAEB2012032400649399 /* FICImageTableChunk.swift */,
+				18DC26002012F02200156DCF /* FICUtilities.h */,
+				18DC26012012F02200156DCF /* FICUtilities.m */,
+				18DC26042012F08200156DCF /* FICImageTable.swift */,
+				18DC26062012F31500156DCF /* FICImageFormat.swift */,
+				18DC260820132A2700156DCF /* FICEntity.swift */,
+				18DC260A2013341200156DCF /* FICIImageCache.swift */,
+				18DC25FF2012EFF600156DCF /* New Group */,
 				18DCBAD3201202B900649399 /* Info.plist */,
 			);
 			path = "FastImageCache-Swift";
@@ -99,6 +125,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DC26022012F02200156DCF /* FICUtilities.h in Headers */,
 				18DCBAE0201202B900649399 /* FastImageCache_Swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,8 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DC26072012F31500156DCF /* FICImageFormat.swift in Sources */,
+				18DC260920132A2700156DCF /* FICEntity.swift in Sources */,
 				18DCBAEA201202F700649399 /* FICImageTableEntry.swift in Sources */,
 				18DCBAEC2012032400649399 /* FICImageTableChunk.swift in Sources */,
+				18DC26032012F02200156DCF /* FICUtilities.m in Sources */,
+				18DC260B2013341200156DCF /* FICIImageCache.swift in Sources */,
+				18DC26052012F08200156DCF /* FICImageTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
