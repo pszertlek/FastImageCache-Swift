@@ -47,8 +47,8 @@ class FICImageCache {
             print("*** FIC Error:FICImageCache has already been configured with its image formats.")
         } else {
             var imageTableFiles = Set<String>()
+            let currentDevice: FICImageFormatDevices = UIDevice.current.userInterfaceIdiom == .pad ? FICImageFormatDevices.Pad: FICImageFormatDevices.Phone
 
-            let currentDevice: FICImageFormatDevices = UIDevice.current.userInterfaceIdiom == .pad ? .Pad:.Phone
             for imageFormat in formats {
                 let formatName = imageFormat.name
                 let devices = imageFormat.devices
@@ -65,8 +65,9 @@ class FICImageCache {
             let fileNames =  try! FileManager.default.contentsOfDirectory(atPath: directoryPath)
             for fileName in fileNames {
                 if !imageTableFiles.contains(fileName) {
-//                    let filePath = 
-//                    FileManager.default.removeItem(atPath: filePath)
+//                    let path = FileManager.default.removeItem(at: <#T##URL#>)
+                    let filePath =
+                    try! FileManager.default.removeItem(atPath: fileName)
                 }
             }
         }

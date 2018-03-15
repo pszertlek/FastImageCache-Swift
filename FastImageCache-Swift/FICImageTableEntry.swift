@@ -14,6 +14,7 @@ struct FICImageTableEntryMetadata {
 }
 
 class FICImageTableEntry {
+    static let metadataVersion = 8
     var length: size_t
     var imageLength: size_t {
         get {

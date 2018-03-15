@@ -58,8 +58,8 @@ class FICImageFormat: NSCopying {
  info = CGBitmapInfo(rawValue:CGImageAlphaInfo.noneSkipFirst.rawValue | CGImageByteOrderInfo.order16Little.rawValue)
         case .Grayscale8Bit:
                         info = CGBitmapInfo(rawValue:CGImageAlphaInfo.none.rawValue)
-        default:
-            info = CGBitmapInfo(rawValue:CGImageAlphaInfo.none.rawValue)
+//        default:
+//            info = CGBitmapInfo(rawValue:CGImageAlphaInfo.none.rawValue)
 
         }
         return info!
@@ -97,8 +97,32 @@ class FICImageFormat: NSCopying {
         return style == .Grayscale8Bit
     }
     var protectionMode: FICImageFormatProtectionMode
-    var protectionModeString: String
-    var dictionaryRepresentation: [String: AnyObject]
+    var protectionModeString: String {
+        var protectionModeString : String!;
+        switch (protectionMode) {
+        case .none:
+            protectionModeString = FileProtectionType.none.rawValue;
+        case .complete:
+            protectionModeString = FileProtectionType.complete.rawValue;
+        case .completeUntilFirstUserAuthentication:
+            protectionModeString = FileProtectionType.completeUntilFirstUserAuthentication.rawValue;
+        }
+        return protectionModeString;
+    }
+    var dictionaryRepresentation: [String: Any] {
+        var dictionary = [String: Any]()
+        dictionary[FICImageFormatNameKey] = name as Any;
+        dictionary[FICImageFormatFamilyKey] = family as Any;
+        dictionary[FICImageFormatWidthKey] = imageSize.width as Any;
+        dictionary[FICImageFormatHeightKey] = imageSize.height as Any;
+        dictionary[FICImageFormatMaximumCountKey] = maximumcount as Any;
+        dictionary[FICImageFormatStyleKey] = style as Any;
+        dictionary[FICImageFormatDevicesKey] = devices
+        dictionary[FICImageFormatProtectionModeKey] = protectionMode
+        dictionary[FICImageTableScreenScaleKey] = UIScreen.main.scale
+        dictionary[FICImageTableEntryDataVersionKey] = FICImageTableEntry.metadataVersion
+        return dictionary;
+    }
     init(name: String, family: String, imageSize: CGSize, style: FICImageFormatStyle, maximumCount: Int, devices: FICImageFormatDevices, protectionMode: FICImageFormatProtectionMode) {
         self.name = name
         self.family = family
@@ -109,7 +133,7 @@ class FICImageFormat: NSCopying {
         self.protectionMode = protectionMode
     }
     func copy(with zone: NSZone? = nil) -> Any {
-        return 1
+        return FICImageFormat(name: name, family: family, imageSize: imageSize, style: style, maximumCount: maximumcount, devices: devices, protectionMode: protectionMode)
     }
     
 }

@@ -15,6 +15,7 @@
 //
 
 #import "FICUtilities.h"
+#import <CommonCrypto/CommonDigest.h>
 
 
 #pragma mark - Byte Alignment
@@ -45,10 +46,8 @@ CFUUIDBytes FICUUIDBytesWithString(NSString *string) {
     CFUUIDBytes UUIDBytes;
     CFUUIDRef UUIDRef = CFUUIDCreateFromString(kCFAllocatorDefault, (CFStringRef)string);
     
-    if (UUIDRef != NULL) {
-        UUIDBytes = CFUUIDGetUUIDBytes(UUIDRef);
-        CFRelease(UUIDRef);
-    }
+    UUIDBytes = CFUUIDGetUUIDBytes(UUIDRef);
+    CFRelease(UUIDRef);
     
     return UUIDBytes;
 }
